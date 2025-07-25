@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- 文档类型声明为 HTML5，并设置页面语言为简体中文 -->
+
+<head>
+<!-- 头部信息（不显示在网页上） -->
+    <meta charset="UTF-8">
+    <!-- 定义网页字符编码为 UTF-8，确保支持中文等多语言字符显示 -->
+    
+    <title>Homepage</title>
+    <!-- 浏览器标签上显示的网页标题 -->
+
+    <meta name="description" content="A structured and interactive folder-style webpage with SVG visualization and a responsive layout.">
+    <!-- 页面描述，适用于搜索引擎摘要（SEO） -->
+
+    <meta name="keywords" content="folder, interactive, web layout, SVG, information panel">
+    <!-- 关键词，有助于 SEO（部分搜索引擎已忽略） -->
+
+    <meta name="author" content="Your Name or Project Team">
+    <!-- 署名信息 -->
+
+    <meta name="robots" content="index, follow">
+    <!-- 让搜索引擎索引该页面，并跟踪其链接 -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置视口宽度与设备屏幕宽度一致，使网页在移动设备上自适应 -->
+
+    <link rel="icon" href="assets/images/icon.svg" type="image/svg+xml">
+    <!-- 外部引用：设置浏览器标签的小图标（favicon），图标文件位于项目的 assets/images 文件夹中 -->
+
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- 外部引用：引入清除浏览器默认样式的 CSS 文件，文件位于项目的 css 文件夹中 -->
+
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- 外部引用：引入自定义网页样式的 CSS 文件，文件位于项目的 css 文件夹中 -->
+     
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- 外部引用：引入响应式网页样式的 CSS 文件，文件位于项目的 css 文件夹中 -->
+
+</head>
+
+<body>
+<!-- 页面内容主体 -->
+
+    <header class="header index-header">
+    <!-- 页眉，交互部 --> 
+    <!-- 是主页所以选择 index-header -->   
+        <div class="header-content index-header-content">
+        <!-- 页眉的排版容器，是主页所以选择 index-header-content -->  
+            <div class="header-text">
+            <!-- 标题和副标题区域的排版容器，用于区分插图 -->
+                <h1 class="header-title">Homepage</h1>
+                <!-- 网页主标题 -->
+                <p class="subheader signature">— a demostration of "Web-Indexing-OS-style-Template"</p>
+                <!-- 页眉中的签名文字 -->
+            </div>
+            <div class="info-icon">
+                <!-- 信息图标，点击后展开信息面板，由 infoToggle.js 控制 -->
+                <img src="assets/images/info-icon-light.svg" alt="Info Icon" id="infoIcon">
+                <!-- 外部引用：图标文件位于 assets/images 文件夹中 -->
+            </div>
+        </div>
+        
+        <div class="info-panel" id="infoPanel">
+        <!-- 可展开的信息面板 -->
+            <div class="tags">
+            <!-- 标签区域，用于显示主题或分类 -->
+                <span class="tag">tag 1</span>
+                <!-- 不可点击的标签 -->
+                <span class="tag">tag 2</span>
+                <span class="tag">tag 3</span>
+            </div>
+            <div class="tags">
+                <a class="tag clickable" href="404.html">
+                <!-- 可点击的标签，点击后跳转到 404 页面 -->
+                    another language version of this website
+                </a>
+            </div>
+            
+            <div class="info">
+            <!-- 信息区域的排版容器 -->
+                <strong>Updates:</strong>
+                <ul id="commit-list">Getting update informations...</ul>
+                <!-- 动态生成的更新内容列表，由 commitList.js 控制-->
+                <div class="tags">
+                <!-- 标签的排版容器 -->
+                    <span class="tag clickable" id="copyButton">
+                    <!-- 可点击的标签，点击后复制更新列表，由 copyCommitList.js 控制 -->
+                        <img src="assets/images/copy.png"> more updates
+                        <!-- 外部引用：按钮图标文件位于 assets/images 文件夹中 -->
+                    </span>
+                </div>
+            </div>
+            <br>
+            <div class="info copyright-notice">
+            <!-- 页脚版权声明的排版容器 -->
+                <hr>
+                <p>© <span id="currentYear"></span> 觉空. All rights reserved.</p>
+                <p>Wechat: Ia-3-aI</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+    <!-- 内容部 -->
+        <div class="card-container">
+        <!-- 卡片的排版容器 -->
+            <div class="card-container folder">
+            <!-- 特定类型的卡片排版容器，文件夹样式 -->
+                <a href="page1.html" class="card">
+                <!-- 卡片一，点击后跳转到 page1.html 页面 -->
+                    <h2 class="card-title">Folder Example<br>With Info</h2>
+                    <!-- 卡片标题 -->
+                    <div class="keywords-background">
+                    <!-- 背景关键词系统的排版容器 -->
+                        <div class="keywords">
+                        <!-- 关键词系统的内容 -->
+                            <span style="font-size: 68px;">Key</span>
+                            <span style="font-size: 80px;">Word</span>
+                            <span style="font-size: 64px;">System</span>
+                            <span style="font-size: 50px;">Contents</span>
+                            <span style="font-size: 42px;">Hinting</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="page2.html" class="card">
+                    <h2 class="card-title">a Possible Folder <br> without info</h2>
+                    <div class="keywords-background">
+                        <div class="keywords">
+                            <span style="font-size: 54px;">Key</span>
+                            <span style="font-size: 63px;">Word</span>
+                            <span style="font-size: 74px;">System</span>
+                            <span style="font-size: 96px;">Contents</span>
+                            <span style="font-size: 42px;">Hinting</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="404.html" class="card">
+                    <h2 class="card-title">Another <br> Folder (404)</h2>
+                    <div class="keywords-background">
+                        <div class="keywords">
+                            <span style="font-size: 68px;">Key</span>
+                            <span style="font-size: 54px;">Word</span>
+                            <span style="font-size: 64px;">System</span>
+                            <span style="font-size: 34px;">Contents</span>
+                            <span style="font-size: 48px;">Hinting</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 引入的 JavaScript 文件 -->
+    <script src="javascripts/throttle.js"></script>
+    <!-- 外部引用：实现函数节流功能的 JavaScript 文件，位于 javascripts 文件夹中 -->
+    <script src="javascripts/scrollHandler.js"></script>
+    <!-- 外部引用：处理滚动事件的 JavaScript 文件，位于 javascripts 文件夹中 -->
+    <script src="javascripts/infoToggle.js"></script>
+    <!-- 外部引用：控制信息面板展开与关闭的 JavaScript 文件，位于 javascripts 文件夹中 -->
+    <script src="javascripts/main.js"></script>
+    <!-- 外部引用：主逻辑文件，用于控制主要交互功能，位于 javascripts 文件夹中 -->
+    <script src="javascripts/commitList.js"></script>
+    <!-- 外部引用：动态获取和显示更新列表的 JavaScript 文件，位于 javascripts 文件夹中 -->
+    <script src="javascripts/copyCommitList.js"></script>
+    <!-- 外部引用：实现复制更新列表功能的 JavaScript 文件，位于 javascripts 文件夹中 -->
+    <script src="javascripts/headerImage.js"></script>
+    <!-- 外部引用：控制页眉图片显示的脚本，位于 javascripts 文件夹中 -->
+    <script>
+    // 动态设置当前年份到页面
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

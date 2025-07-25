@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="header index-header">
+        <div class="header-content index-header-content">
+            <div class="header-text">
+                <h1 class="header-title">空</h1>
+                <p class="subheader signature">— This address is outside the structure</p>
+            </div>
+            <div class="info-icon">
+                <img src="assets/images/info-icon-light.svg" alt="Info Icon" id="infoIcon">
+            </div>
+        </div>
+        <div class="info-panel" id="infoPanel">
+            <div class="info">
+                <p>觀自在菩薩。行深般若波羅蜜多時。照見五蘊皆空。度一切苦厄。
+
+                    舍利子。色不異空。空不異色。色即是空。空即是色。受想行識亦復如是。
+                    
+                    舍利子。是諸法空相。不生不滅。不垢不淨。不增不減。
+                    
+                    是故空中。無色。無受想行識。無眼耳鼻舌身意。無色聲香味觸法。無眼界乃至無意識界。
+                    
+                    無無明。亦無無明盡。乃至無老死。亦無老死盡。無苦集滅道。無智亦無得。以無所得故。菩提薩埵。
+                    
+                    依般若波羅蜜多故。心無罣礙。無罣礙故。無有恐怖。遠離顛倒夢想。究竟涅盤。三世諸佛。
+                    
+                    依般若波羅蜜多故。得阿耨多羅三藐三菩提。
+                    
+                    故知般若波羅蜜多。是大神咒。是大明咒。是無上咒。是無等等咒。
+                    
+                    能除一切苦。真實不虛。故說般若波羅蜜多咒。
+                    
+                    即說咒曰。揭諦。揭諦。波羅揭諦。波羅僧揭諦。菩提薩婆訶。</p>
+            </div>
+            <div class="info copyright-notice">
+                <hr>
+                <p>© <span id="currentYear"></span> 觉空. All rights reserved.</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="card-container">
+            <div class="card-container folder">
+                <a href="index.html" class="card">
+                    <h2 class="card-title">Homepage</h2>
+                    <div class="keywords-background">
+                        <div class="keywords">
+                            <span style="font-size: 24px;">色即是空</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 引入脚本文件 -->
+    <script src="javascripts/throttle.js"></script>
+    <script src="javascripts/scrollHandler.js"></script>
+    <script src="javascripts/infoToggle.js"></script>
+    <script src="javascripts/main.js"></script>
+    <script src="javascripts/headerImage.js"></script>
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+/* styles.css*/
+/*z-index: 
+body-Background：0；
+Keywords: 2;*/
+
+/* 引入其他样式文件 */
+@import url('header.css');
+@import url('cards.css');
+
+/* 引入字体，暂时使用cdn，可切换回assets/fonts的字体*/
+/* 引入思源黑体（Source Han Sans SC） */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;500;700;900&display=swap');
+
+/* 引入思源宋体（Source Han Serif SC） */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;400;700;900&display=swap');
+
+@font-face {
+  font-family: 'ExtremeBoldSongti';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: local('Source Han Serif SC'), local('Noto Serif SC');
+}
+
+@font-face {
+  font-family: 'RegularHeiti';
+  font-weight: lighter;
+  font-style: normal;
+  font-display: swap;
+  src: local('Source Han Sans SC'), local('Noto Sans SC');
+}
+
+/* 全局样式和背景 */
+body {
+    font-family: 'RegularHeiti', sans-serif;
+    /*background-image: url('../assets/images/background.jpg'); */
+    background-image:
+        linear-gradient(rgba(240,240,240,0.7), rgba(240,240,240,0.7)), /* 蒙版层 */
+        url(../assets/images/paper-structure.png);                      /* 图片层 */
+    background-color: #f0f0f0;
+    background-attachment: fixed;
+    background-attachment: fixed;
+    overflow-x: hidden; /* 禁止横向滚动 */
+    -webkit-user-select: none; /* Chrome, Safari, Opera 禁止选中*/
+    -moz-user-select: none;    /* Firefox 禁止选中*/
+    -ms-user-select: none;     /* Internet Explorer/Edge 禁止选中*/
+    user-select: none;         /* Standard syntax 禁止选中*/
+    z-index: 0;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh; /* 防止页面有额外的高度 */
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* 继承父元素的颜色 */
+}
+
+
+/* 关键词背景 */
+
+.keywords-background {
+    position: absolute; /* 使其位于卡片的背景层 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* 放置在卡片内容层下方 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    align-items: right;
+    padding: 20px;
+    pointer-events: none; /* 禁止点击关键词区域 */
+  }
+  
+  /* 关键词样式 */
+  .keywords-background .keywords {
+    position: absolute; /* 使用 absolute 定位 */
+    bottom: 0; /* 将位置固定在容器的底部 */
+    right: 0; /* 将位置固定在容器的右侧 */
+    font-family: 'ExtremeBoldSongti', serif;
+    font-weight: 900;
+    color: #b0b0b01f;
+    text-shadow: 0 0 5px;
+    line-height: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* 右对齐子元素 */
+  }
+
+  .keywords-background .keywords span {
+    margin: 0px;
+    white-space: nowrap;
+  }
+
+  
+  svg {
+    display: block;
+    margin: 0 auto; /* 将 SVG 居中 */
+  }
+
+  #commit-list {
+    list-style: none; /* 去掉列表前的圆点 */
+    padding: 0;       /* 去掉默认的内边距 */
+    margin: 0;        /* 去掉默认的外边距 */
+}

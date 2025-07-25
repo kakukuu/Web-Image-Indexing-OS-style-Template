@@ -1,0 +1,190 @@
+/* header.css, z-index: header-background:1; header-content:3-5*/
+
+.header {
+  position: relative;
+  overflow: hidden;
+  padding-top: 60px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255), rgba(255, 255, 255), rgb(255, 244, 221)); 
+  z-index: 1;
+  box-shadow: 0 -1px 2px rgba(165, 165, 165, 0.75);
+  min-height: fit-content; /* 最小高度自适应内容，避免文字无法显示 */
+}
+
+.header.index-header {
+  height: 100vh;
+}
+
+.header.page-header {
+  transition: height 0.5s ease; /* 平滑过渡动画 */
+}
+
+.header.page-header.expanded {
+  height: fit-content;  /*增加的高度，打开 info-panel 时 */
+  max-height: 100vh;
+}
+
+.header-content {
+  display: flex;
+  align-items: flex-start; /* 确保图片和文本顶部对齐 */
+  position: relative;
+  margin-left: 6.5vw; /* 让内容从页面右侧的 2.5% 开始 */
+  z-index: 3;
+}
+
+.header-content.index-header-content {
+  margin-top: 30vh;
+}
+
+.header-content.page-header-content {
+  margin-top: 0vh;
+}
+
+
+.header-img {
+  width: 10vw;
+  aspect-ratio: 1/1;
+  height: auto; /* 让aspect-ratio生效 */
+  object-fit: cover; /* 图片填充 */
+  box-shadow: 0 -1px 2px rgba(165, 165, 165, 0.5);
+  display: block;
+  overflow: hidden;
+  margin-right: 3vw;
+}
+
+.header-img.enlarged {
+  width: 20vw;
+  transition: transform 0.3s ease;
+  cursor: zoom-out;     /* 光标切换 */
+  margin-right: 4vw;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: 10vw; /* 不会被 info-icon 遮挡 */
+  overflow: hidden; /* 隐藏溢出文本 */
+  text-overflow: ellipsis; /* 溢出文本显示省略号 */
+
+}
+
+.header-title {
+  font-family: 'ExtremeBoldSongti', serif;
+  font-size: min(5vw, 5vh);
+  font-weight: 900;
+  color: rgb(54, 54, 54);
+  white-space: nowrap; /* 不换行 */
+  overflow: hidden; /* 隐藏溢出文本 */
+  text-overflow: ellipsis; /* 溢出文本显示省略号 */
+  transform: translateZ(0); /* 3D 加速 */
+}
+
+.subheader {
+  font-family: 'ExtremeBoldSongti', serif;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #363636;
+  padding-bottom: 10px; /* 底部留白 */
+}
+
+.subheader.signature {
+  visibility: hidden;
+  transition: visibility 0.3s ease;
+}
+
+.subheader.signature.open {
+  visibility: visible;
+}
+
+
+.info-icon {
+  position: absolute;
+  opacity: 80%;
+  top: min(3vh, 3vw); /* 保持在页面顶部 */
+  right: 7vw;
+  cursor: pointer;
+  transition: background-image 0.3s ease; /* 平滑过渡 */
+}
+
+.info-icon img {
+  width: 2vh;
+  height: 2vh;
+}
+
+.info-panel {
+  position: sticky; /* 改为固定定位，始终显示在视口内 */
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  top: 18vh; /* 定位到页面顶部 a*/
+  left: 0; /* 水平居中 */
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 87%; /* 宽度为页面的87% */
+  max-height: 0vh; /* 初始最大高度为0，用于动画 */
+  min-height: 0vh;
+  overflow-y: scroll; /* 增加垂直滚动条 */
+  background-color: rgba(190, 190, 190, 0.5); /* 半透明白色背景 */
+  border-radius: 2px; /* 圆角设置为2px */
+  transition: max-height 0.5s ease, min-height 0.5s ease; /* 平滑过渡动画 */
+  opacity: 70%;
+  z-index: 3;
+}
+
+.info-panel.open {
+  top: 18vh; /* 定位到页面顶部 */
+  min-height: 30vh;
+  max-height: 50vh; /* 展开时的最大高度 */
+  margin-bottom: 6vh;
+  -webkit-user-select: text; /* Chrome, Safari, Opera 禁止选中*/
+  -moz-user-select: text;    /* Firefox 禁止选中*/
+  -ms-user-select: text;     /* Internet Explorer/Edge 禁止选中*/
+  user-select: text;         /* Standard syntax 禁止选中*/
+}
+
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  padding-bottom: 0px;
+  z-index: 4;
+}
+
+.tag {
+  background-color: rgba(196, 196, 196, 0.35);
+  border-radius: 2px;
+  padding: 5px 10px;
+  margin: 5px;
+  font-family: 'RegularHeiti', sans-serif;
+  font-size: 14px;
+}
+
+.tag img {
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+}
+
+.tag.clickable {
+  background-color: rgba(240, 240, 240, 0);
+  border: 1px solid rgba(132, 132, 132, 0.35);
+  border-radius: 2px;
+}
+
+.tag.clickable:hover{
+  background-color: rgba(132, 132, 132, 0.35);
+  transition: background-color 0.3s ease;
+}
+
+.info {
+  padding: 0 20px 20px 20px;
+  font-family: 'RegularHeiti', sans-serif;
+  font-size: 14px;
+  padding-top: 20px;
+  z-index: 4;
+}
+
+.info.copyright-notice{
+  padding-top: 0px;
+}

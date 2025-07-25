@@ -1,0 +1,213 @@
+/* cards.css and contents*/
+/* z-index:
+ main-content：0；
+ card:1(like header); 
+ stack: 0; 
+ stack-open:6-7;*/
+
+
+/* 设置主内容背景 */
+.main-content {
+  padding-top: 20px;
+  box-shadow: 0 -1px 2px rgba(165, 165, 165, 0.25);
+  display: flex;
+  justify-content: center; /* 居中卡片 */
+  align-items: flex-start; /* 让卡片从顶部排列 */
+  min-height: 70vh;
+  z-index: 0;
+}
+
+
+/* 调整卡片容器样式，改为纵向排列 */
+.card-container {
+  display: flex;
+  gap: 30px; /* 设置卡片之间的间隙 */
+  flex-direction: column; /* 卡片垂直排列 */
+  width: 100vw; /* 宽度占满 */
+}
+
+.card-container.lecture {
+  flex-wrap: wrap-reverse; /* 换行时调换行数，形成下面多上面少的样式 */
+  flex-direction: row-reverse; /* 调整卡片顺序为水平，并且反序，让顺序可控
+  /*卡片顺序默认越靠后在浏览器的显示上就越靠前 */
+  /*卡片顺序也可靠下面的 #card，通过 order 属性控制*/
+  gap: 20px; /* 设置卡片之间的间隙 */
+  padding: 5vw;
+}
+
+.card-container.folder {
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+}
+
+/* 卡片样式 */
+.card {
+  position: relative;
+  width: 86vw; /* 宽度只比页面宽度窄一点 */
+  margin: auto; /* ，左右居中 */
+  background-color: rgb(255, 229, 182); /* 设置卡片的背景颜色为浅黄色 */
+  border-radius: 2px; /* 为卡片添加圆角 */
+  box-shadow: 0 -1px 2px rgba(165, 165, 165, 0.246);
+  text-decoration: none;
+  overflow: hidden;
+  padding: 2vw;
+  z-index: 1;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 文本溢出显示省略号 */
+}
+
+.card:hover {
+  transform: scale(1.02); /* 放大卡片 */
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2); /* 增强阴影效果 */
+  transition: 0.2s ease;
+}
+
+.card.lecture {
+  width: 150px;
+  height: 200px;
+  padding: 1vw;
+}
+
+ 
+/* 卡片标题 */
+.card-title {
+  position: relative; /* 确保标题位于背景层上方 */
+  z-index: 3;
+  font-family: 'BoldHeiti', sans-serif;
+  font-size: 24px;
+  color: #363636;
+  text-align: left; /* 左对齐 */
+  word-wrap: break-word;
+  display: -webkit-box; /* 设置多行文本显示 */
+  -webkit-box-orient: vertical;  /* 设置文本垂直排列 */
+  -webkit-line-clamp: 2; /* 设置最大行数 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 文本溢出显示省略号 */
+}
+
+.card-title.lecture {
+  font-size: 16px;
+  line-height: 1.5em;
+  -webkit-line-clamp: 6; /* 设置最大行数 */
+}
+
+.card-title img {
+  width: 24px;
+  height: 24px;
+  margin-right: 24px;
+  margin-bottom: -5px;
+  opacity: 80%;
+}
+
+
+#card-1 {
+  order: 999; /* 显示在第1顺位 */
+}
+
+#card-2 {
+  order: 998; /* 显示在第2顺位 */
+}
+
+#card-3 {
+  order: 997; /* 显示在第3顺位 */
+}
+
+#card-4 {
+  order: 996; /* 显示在第4顺位 */
+}
+
+#card-5 {
+  order: 995; /* 显示在第5顺位 */
+}
+
+#card-6 {
+  order: 994; /* 显示在第6顺位 */
+}
+
+#card-7 {
+  order: 993; /* 显示在第7顺位 */
+}
+
+#card-8 {
+  order: 992; /* 显示在第8顺位 */
+}
+
+#card-9 {
+  order: 991; /* 显示在第9顺位 */
+}
+
+
+.card.lecture.stack {
+  /*已有的：position: relative;
+  width: 150px;
+  height: 200px;
+  cursor: pointer;*/
+  background-color: rgba(190, 190, 190, 0.485); /* 半透明白色背景 */
+  padding: 0;
+  transition: background-color 1.5s ease;
+  z-index: 0; /* 放置在所有内容的下方，作为body背景的一部分 */
+}
+
+.card.lecture.subcard { 
+  /* subcard在html始终处于stack中 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  padding: 0.7vw; /* 减小padding，适应卡片的缩小 */
+}
+
+.card.lecture.subcard:nth-child(1) { transform: translateX(0%) translateY(0%); }
+.card.lecture.subcard:nth-child(2) { transform: translateX(10%) translateY(10%); }
+.card.lecture.subcard:nth-child(3) { transform: translateX(10%) translateY(10%); }
+.card.lecture.subcard:nth-child(4) { transform: translateX(10%) translateY(10%); }
+.card.lecture.subcard:nth-child(5) { transform: translateX(10%) translateY(10%); }
+.card.lecture.subcard:nth-child(6) { transform: translateX(10%) translateY(10%); }
+.card.lecture.subcard:nth-child(7) { transform: translateX(10%) translateY(10%); }
+
+.card.lecture.stack.active {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 100vw; /* 视口宽度 */
+  min-height: 100vh; /* 最小视口高度 */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-content: center;
+  z-index: 6; /* 放置在所有内容的上方 */
+  pointer-events: auto; /* 卡片可点击 */
+  gap: 20px; /* 设置卡片之间的间隙 (和container一样)*/
+  padding: 5vw;
+  overflow-y: scroll; /* 增加垂直滚动条 */
+}
+
+.card.lecture.stack.active ~ * {
+  pointer-events: none; /* 禁止后面所有元素的点击 */
+}
+
+/* 让 stack.active 禁止自身 hover 放大 */
+.card.lecture.stack.active:hover {
+  transform: none;
+}
+
+
+.card.lecture.stack.active .card.lecture.subcard {
+  position: static; /* 让flex自动布局 */
+  width: 150px;
+  height: 200px;
+  transform: none;
+  pointer-events: auto; /* 卡片可点击 */
+  padding: 1vw; /* 恢复原有的padding */
+  z-index: 7;
+}
+/* 让 stack.active 中的subcard允许 hover 放大 */
+
+.card.lecture.stack.active .card.lecture.subcard:hover {
+  transform: scale(1.02); /* 放大卡片 */
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2); /* 增强阴影效果 */
+  transition: 0.2s ease;
+}
