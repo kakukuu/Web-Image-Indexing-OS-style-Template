@@ -37,68 +37,32 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- 外部引用：引入响应式网页样式的 CSS 文件，文件位于项目的 css 文件夹中 -->
 
+    
     <link rel="stylesheet" href="css/header and payload.css">
 
 </head>
 
 <body>
 
-    <header class="header-background">
-        <div class="header-ambient">
-            <p class="header-elements page-index">xxxxxxx.com</p>
-            <div class="header-elements title-module">
-                <img class="hero" src="assets/images/icon.svg" alt="Header Image">
-                <div class="header-elements block-switcher" id="block-switcher">
-                    <img src="assets/images/language & home.png" data-active-src="assets/images/language & home.png">
-                    <img src="assets/images/updates.png"       data-active-src="assets/images/updates.png">
-                    <img src="assets/images/info.png"          data-active-src="assets/images/info.png">
-                </div>
-                <h1 class="banner">静</h1>
-                <h1 class="subtitle-1">JIN</h1>
-                <h1 class="subtitle-2">A structured and interactive folder-style webpage </br> with SVG visualization </br> and a responsive layout.</h1>
-            </div>
-            <div class="header-elements block-stage" id="block-stage">
-                <div class="header-elements block grid-block">
-                    <div class="grid">
-                        <!-- 12 个格子：href 改成你的目标或锚点 -->
-                        <a class="cell" href="#dest1"><img src="assets/images/x.png"     alt=""></a>
-                        <a class="cell" href="#dest2"><img src="assets/icons/settings.png" alt=""></a>
-                        <a class="cell" href="#dest3"><img src="assets/icons/info.png"     alt=""></a>
-                        <a class="cell" href="#dest4"><img src="assets/icons/mail.png"     alt=""></a>
-                        <a class="cell" href="#dest5"><img src="assets/icons/folder.png"   alt=""></a>
-                        <a class="cell" href="#dest6"><img src="assets/icons/star.png"     alt=""></a>
-                        <a class="cell" href="#dest7"><img src="assets/icons/chart.png"    alt=""></a>
-                        <a class="cell" href="#dest8"><img src="assets/icons/user.png"     alt=""></a>
-                        <a class="cell" href="#dest9"><img src="assets/icons/lock.png"     alt=""></a>
-                        <a class="cell" href="#dest10"><img src="assets/icons/cloud.png"   alt=""></a>
-                        <a class="cell" href="#dest11"><img src="assets/icons/map.png"     alt=""></a>
-                        <a class="cell" href="#dest12"><img src="assets/icons/help.png"    alt=""></a>
-                    </div>
-                </div>
-                <div class="header-elements block">
-                    <span class="header-elements version-display">Version 1.0.0</span>
-                    <span class="header-elements separator">|</span>
-                    <span class="header-elements license-display">MIT License</span>
-                </div>
-                <div class="header-elements block">
-                    <span class="header-elements copyright-display">© <span id="currentYear"></span> Your Name or Project Team</span>
-                </div>
-            </div>
-    </header>
-
-    
     <main class="payload-background">
     <!-- 内容部 -->
         <div class="payload-ambient">
         <!-- 卡片的排版容器 -->
-            <a class="payload-elements to-menu" href="menu.html" target="_self">
+            <a class="payload-elements to-menu" href="index.html" target="_self">
                 <!-- 右箭头图标，跟随文字颜色 -->
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M5 12h14"></path>
-                    <path d="M13 5l7 7-7 7"></path>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M19 12H5"></path>
+                    <path d="M11 5l-7 7 7 7"></path>
                 </svg>
+
             </a>
+            <section class="payload-elements block grid-block">
+                <div class="grid">
+                    <a class="cell" href="#">Technique</a>
+                    <a class="cell" href="#">Project</a>
+                    <a class="cell" href="#">Products</a>
+                </div>
+            </section>
         </div>
     </main>
 

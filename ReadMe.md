@@ -1,3 +1,1 @@
-Project introduction: https://kakukuu.github.io/Web-Indexing-OS-style-Template-Project-Introduction/
-<br>
-Template Preview: https://kakukuu.github.io/Web-Indexing-OS-style-Template/
+需要匹配介绍页来做细节的索引

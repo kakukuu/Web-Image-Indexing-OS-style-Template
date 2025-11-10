@@ -24,40 +24,30 @@
 
     <link rel="stylesheet" href="css/responsive.css">
     <!-- 外部引用：引入响应式网页样式的 CSS 文件，文件位于项目的 css 文件夹中 -->
+    <link rel="stylesheet" href="css/header and payload.css">
 </head>
 
 <body>
 <!-- 页面主体内容 -->
 
-    <header class="header page-header expanded">
-    <!-- 页眉，交互部 -->
-    <!-- 不是主页所以选 page-header，默认打开所以加上 expanded （通过 header.css 控制）-->
-        <div class="header-content page-header-content">
-        <!-- 页眉内容的排版容器，不是主页所以选 page-header-content-->
-            <img class="header-img" src="assets/images/icon.png" alt="Header Image">
-            <!-- 可选的封面图片，这里文件位于 assets/images 文件夹中 -->
-            <div class="header-text">
-            <!-- 标题和副标题区域的排版容器，用于区分插图 -->
-                <h1 class="header-title">Folder Example With Info</h1>
-                <!-- 主标题 -->
-
-                <p class="subheader">
-                <!-- 副标题格式的页面导航链接 -->
-                    <a href="index.html">Homepage</a> 
-                    
-                    ▏
-                    <!-- ▏ (U+258F)：左八分之一块 -->
-                    <!-- 外部引用：导航链接，指向主页 -->
-                </p>
-            </div>
-            <div class="info-icon">
+    <header class="header-background">
+        <div class="header-ambient">
+            <p class="header-elements page-index"><a href="index.html">Homepage </a> ▏</p>
             <!-- 信息图标，点击后展开信息面板，由 infoToggle.js 控制 -->
-                <img src="assets/images/info-icon-gray.svg" alt="Info Icon" id="infoIcon">
+            
+            <img class="header-elements info-icon" src="assets/images/info-icon-gray.svg" alt="Info Icon" id="infoIcon">
                 <!-- 外部引用：信息图标图片，文件位于 assets/images 文件夹中 -->
+            <div class="header-elements title-module">
+                
+                <img class="thumb" src="assets/images/language & home.png" alt="Header Image">
+                <h1 class="title">静</h1>
+                <h1 class="subtitle-1">JIN</h1>
+                <h1 class="subtitle-2">A structured and interactive folder-style webpage </br> with SVG visualization </br> and a responsive layout.</h1>
             </div>
+            
         </div>
 
-        <div class="info-panel open" id="infoPanel">
+        <div class="header-elements info-panel open" id="infoPanel">
             <!-- 展开的信息面板，包含页面简介，默认打开所以加上 open -->
             <div class="info">
             <!-- 文字信息的排版容器 -->
@@ -107,18 +97,6 @@
             <!-- 标签的排版容器 -->
                 <span class="tag clickable" id="copyButton"><img src="assets/images/copy-graphic.png">SVG code</span>
                 <!-- 可点击的标签，用于复制 SVG 代码，由 copySVG.js 控制 -->
-            </div>
-        </div>
-
-        <div class="keywords-background">
-        <!-- 背景关键词系统的排版容器 -->
-            <div class="keywords">
-                <!-- 关键词系统的内容 -->
-                <span style="font-size: 68px;">Key</span>
-                <span style="font-size: 80px;">Word</span>
-                <span style="font-size: 64px;">System</span>/br
-                <span style="font-size: 50px;">Contents</span>
-                <span style="font-size: 42px;">Hinting</span>
             </div>
         </div>
     </header>

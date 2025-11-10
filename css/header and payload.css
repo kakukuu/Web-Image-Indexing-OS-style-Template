@@ -1,0 +1,381 @@
+/* header.css, z-index: header-background:1; header-content:3-5*/
+
+.header-background {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(255, 255, 255), rgba(255, 255, 255), rgba(255, 244, 221, 0)); 
+  z-index: 1;
+  box-shadow: 0 -1px 2px rgba(165, 165, 165, 0.9);
+  min-height: fit-content; /* 最小高度自适应内容，避免文字无法显示 */
+}
+
+.header-ambient {
+  padding: 6vw 6vw 3vw 6vw;
+  z-index: 2;
+}
+
+.header-elements {
+  z-index: 3;
+}
+
+  .header-elements.page-index {
+    position: relative;
+    font-family: 'ExtremeBoldSongti', serif;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #363636;
+    padding-bottom: 10px; /* 底部留白 */
+    z-index: 4;
+  }
+  
+  .header-elements.info-icon {
+    position: relative;
+    opacity: 80%;
+    margin-left: 80vw;
+    cursor: pointer;
+    transition: background-image 0.3s ease; /* 平滑过渡 */
+  }
+
+  .header-elements.info-icon img {
+    width: 2vh;
+    height: 2vh;
+  }
+
+  .header-elements.title-module {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 36px;
+      margin-bottom: 8px;
+      position: relative;
+  }
+
+  .title-module h1{}
+
+    .title-module h1.banner {
+      position: absolute;
+      margin-top: 38vw; /* 调整标题位置 */
+      font-size: 20vw;
+      font-weight: 100;
+      color: #111;
+      line-height: 1;
+      margin-right: 22px;
+      min-width: 88px;
+    }
+
+    .title-module h1.title {
+      margin-top: -3vw; /* 调整标题位置 */
+      margin-left: 2vw;
+      position: absolute;
+      font-size: 18vw;
+      font-weight: 100;
+      color: #111;
+      line-height: 1;
+      margin-right: 22px;
+      min-width: 88px;
+    }
+    
+    .title-module h1.subtitle-1 {
+      color: #b71c1c;
+      margin-top: -20px;
+      margin-left: 23vw;
+      margin-bottom: 0;
+      letter-spacing: 1em;
+      font-size: 1.5em;
+      font-family: 'serif';
+      font-weight: 400;
+    }
+
+    .title-module h1.subtitle-2 {
+      font-size: 1.3em;
+      color: #222;
+      margin-top: 0px;
+      margin-left: 23vw;
+      margin-bottom: 0;
+      font-family: 'serif';
+      font-weight: 400;
+    }   
+
+    .title-module img{} 
+
+    .title-module img.hero {
+      width: 100vw;
+      aspect-ratio: 21 / 9;
+      height: auto;
+      margin-left: 5vw;
+    }
+    
+    .title-module img.thumb{
+      width: 40vw;
+      aspect-ratio: 1/1;
+      height: auto; /* 让aspect-ratio生效 */
+      object-fit: cover; /* 图片填充 */
+      margin-left: 3vw;
+      position: absolute;
+      opacity: 25%;
+    }                         
+
+    .header-elements.block-switcher {
+    position: absolute;
+    top: 38vw; /* 调整标题位置 */
+    right: 2vw;
+    min-width: 88px;
+}
+
+  .header-elements.block-switcher img {
+      width: 6vw;
+      height: 6vw;
+      margin: 2vw;
+      max-width: 8vh;
+      max-height: 8vh;
+  }
+/* 舞台 */
+.header-elements.block-stage{
+  --fade: 2vw;                            /* 渐变宽度 */
+  display:flex;
+  gap:5vw;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+  padding-block:12px;
+  width:100%;
+
+  /* 左右渐隐 */
+  -webkit-mask-image: linear-gradient(to right,
+    transparent 0, #000 var(--fade),
+    #000 calc(100% - var(--fade)), transparent 100%);
+          mask-image: linear-gradient(to right,
+    transparent 0, #000 var(--fade),
+    #000 calc(100% - var(--fade)), transparent 100%);
+}
+.header-elements.block-stage::-webkit-scrollbar{ display:none; }
+
+  /* 原版卡片 */
+  .header-elements.block{
+    scroll-snap-align:center;
+    flex:0 0 75vw;              /* 取代 min/max-width */
+    height:30vw;
+    margin-top:3vw;
+    overflow:hidden;
+    border-radius:2px;
+    opacity:.7;
+    transition:max-height .5s ease, min-height .5s ease;
+    
+    background-color: rgba(190, 190, 190, 0.35);
+
+  }
+
+    /* 网格模式开关 */
+    .header-elements.block.grid-block{
+      position:relative;
+      background:transparent;     /* gap 处透到底 */
+    }
+    .header-elements.block.grid-block > .grid{
+      position:absolute; inset:0;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      grid-template-rows:repeat(3,1fr);
+      gap:3px;                    /* 透明分割线宽 */
+      }     
+      .header-elements.block.grid-block .cell{
+        display:flex; align-items:center; justify-content:center;
+        width:100%; height:100%;
+        background:rgba(190,190,190,.5); /* 每格底色 */
+        border-radius:2px;
+        color:inherit; text-decoration:none;
+      }
+        .header-elements.block.grid-block .cell img{
+          display:block;
+          max-width:70%; max-height:70%;
+          object-fit:contain;
+          pointer-events:none; user-select:none;
+        }
+
+.header-elements.info-panel {
+  position: sticky;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  top: 18vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 87%;
+  max-height: 0vh;
+  min-height: 0vh;
+  overflow-y: scroll;
+
+  /* 半透明以便看到背后的模糊 */
+  background-color: rgba(190, 190, 190, 0.15);
+
+  /* 关键：只模糊背后的内容 */
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%); /* Safari */
+
+  border-radius: 2px;
+  transition: max-height 0.5s ease, min-height 0.5s ease;
+  opacity: 0.7;      /* 建议用 0–1 的数值 */
+}
+
+.header-elements.info-panel.open {
+  top: 18vh; /* 定位到页面顶部 */
+  min-height: 30vh;
+  max-height: 50vh; /* 展开时的最大高度 */
+  margin-bottom: 6vh;
+  -webkit-user-select: text; /* Chrome, Safari, Opera 禁止选中*/
+  -moz-user-select: text;    /* Firefox 禁止选中*/
+  -ms-user-select: text;     /* Internet Explorer/Edge 禁止选中*/
+  user-select: text;         /* Standard syntax 禁止选中*/
+}
+
+
+.payload-background {
+  box-shadow: 0 -1px 2px rgba(165, 165, 165, 0.25);
+  display: flex;
+  justify-content: center; /* 居中卡片 */
+  align-items: flex-start; /* 让卡片从顶部排列 */
+  min-height: 70vh;
+  z-index: 1;
+}
+
+.payload-ambient {
+  padding: 9vw 6vw 3vw 6vw;
+  z-index: 2;
+}
+
+.payload-elements {
+  z-index: 3;
+}
+
+  .payload-elements.to-menu{
+    width:100%;
+    display:flex;               /* 用 flex 并列图标和文字 */
+    align-items:center;
+    justify-content:center;
+    gap:3vw;
+    text-decoration:none;
+    color:inherit;
+    background:transparent;     /* 无边框、无底色 */
+    border:0;
+    outline:0;
+    animation:floatY 5s ease-in-out infinite;
+    will-change:transform;
+    transition:transform .18s ease, background-color .18s ease;
+  }
+
+  .to-menu .icon{
+    width:10vw;
+    aspect-ratio: 1/1;
+    flex:0 0 auto;
+  }
+  
+  @keyframes floatY{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-2vw)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .payload-elements.to-menu{animation:none;transition:none}
+  }
+
+
+
+ .payload-elements.block{
+    scroll-snap-align:center;
+    flex:0 0 80vw;     /* 宽度为页面80% */
+    width:80vw;        /* 兜底 */
+    height:40vw;       /* 高度为页面50% */
+    margin-top:3vw;
+    overflow:hidden;
+    opacity:.9;
+    position:relative; /* 供网格绝对定位 */
+    margin-top: 10vw;
+  }
+
+  /* 网格模式开关 */
+  .payload-elements.block.grid-block{
+    background:transparent; /* gap 处透到底 */
+  }
+
+  .payload-elements.block.grid-block > .grid{
+    position:absolute; inset:0;
+    display:grid;
+    gap:6px; /* 透明分割线宽 */
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(2,1fr);
+  }
+
+  /* 窄屏时切到 2×3 */
+
+
+  .payload-elements.block.grid-block .cell{
+    display:flex; align-items:center; justify-content:center;
+    width:100%; height:100%;
+    background:rgba(190,190,190,.5); /* 每格底色 */
+    border-radius:2px;
+    color:#222; text-decoration:none;
+    font-weight:600;
+    font-size:clamp(14px,2.5vw,22px);
+    user-select:none;
+  }
+
+  .payload-elements.block.grid-block .cell img{
+    display:block;
+    max-width:70%; max-height:70%;
+    object-fit:contain;
+    pointer-events:none; user-select:none;
+  }
+
+
+
+
+
+
+
+
+
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  padding-bottom: 0px;
+  z-index: 4;
+}
+
+.tag {
+  background-color: rgba(196, 196, 196, 0.35);
+  border-radius: 2px;
+  padding: 5px 10px;
+  margin: 5px;
+  font-family: 'RegularHeiti', sans-serif;
+  font-size: 14px;
+}
+
+.tag img {
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+}
+
+.tag.clickable {
+  background-color: rgba(240, 240, 240, 0);
+  border: 1px solid rgba(132, 132, 132, 0.35);
+  border-radius: 2px;
+}
+
+.tag.clickable:hover{
+  background-color: rgba(132, 132, 132, 0.35);
+  transition: background-color 0.3s ease;
+}
+
+.info {
+  padding: 0 20px 20px 20px;
+  font-family: 'RegularHeiti', sans-serif;
+  font-size: 14px;
+  padding-top: 20px;
+  z-index: 4;
+}
+
+.info.copyright-notice{
+  padding-top: 0px;
+}
