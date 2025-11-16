@@ -15,16 +15,16 @@
 
     <link rel="icon" href="assets/images/icon.svg" type="image/svg+xml">
     <!-- 外部引用：设置浏览器标签的小图标（favicon），图标文件位于项目的 assets/images 文件夹中 -->
-
-    <link rel="stylesheet" href="css/reset.css">
-    <!-- 外部引用：引入清除默认样式的 CSS 文件 -->
     
     <link rel="stylesheet" href="css/styles.css">
     <!-- 外部引用：引入自定义样式文件，定义网页全局布局和样式 -->
 
+    <link rel="stylesheet" href="css/header and payload.css">
+    <!-- 外部引用：引入自定义样式文件，定义网页全局布局和样式 -->
+
     <link rel="stylesheet" href="css/responsive.css">
     <!-- 外部引用：引入响应式网页样式的 CSS 文件，文件位于项目的 css 文件夹中 -->
-    <link rel="stylesheet" href="css/header and payload.css">
+
 </head>
 
 <body>
@@ -59,7 +59,7 @@
             <!-- 文字信息的排版容器 -->
                 <p>Possible SVG:</p> 
             </div>
-            <svg id="svgContent" width="600" height="200" xmlns="http://www.w3.org/2000/svg">
+            <svg id="svgContent" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
                 <!-- 节点1 -->
                 <circle cx="50" cy="100" r="30" fill="lightyellow"/>
                 <text x="50" y="105" font-size="12" font-weight="bold" text-anchor="middle" alignment-baseline="middle" fill="gray">node 1</text>
@@ -91,7 +91,6 @@
                 <line x1="390" y1="95" x2="380" y2="100" stroke="gray" stroke-width="2"/>
                 <line x1="390" y1="105" x2="380" y2="100" stroke="gray" stroke-width="2"/>
             </svg>
-            </svg>
 
             <div class="tags">
             <!-- 标签的排版容器 -->
@@ -100,82 +99,65 @@
             </div>
         </div>
     </header>
-
-    <main class="main-content">
-    <!-- 内容部 -->
-        <div class="card-container">
-        <!-- 卡片的排版容器 -->
-            <div class="card-container folder">
-            <!-- 特定类型的卡片排版容器，文件夹样式 -->
-                <a href="page2.html" class="card">
-                <!-- 卡片，指向 page2.html -->
-                    <h2 class="card-title"><img src="assets/images/folder.png">a Possible Folder without info</h2>
-                    <div class="keywords-background">
-                        <div class="keywords">
-                            <span style="font-size: 68px;">Key</span>
-                            <span style="font-size: 80px;">Word</span>
-                            <span style="font-size: 64px;">System</span>/br
-                            <span style="font-size: 50px;">Contents</span>
-                            <span style="font-size: 42px;">Hinting</span>
+    <main class="payload-background">
+        <div class="payload-ambient">
+            <section class="payload-elements block grid-block">
+                <div class="folders-grid">
+                    <a class="cell" href="page1.html">Technique</a>
+                    <a class="cell" href="#">Project</a>
+                    <a class="cell" href="#">Products</a>
+                </div>
+            </section>
+            <section class="payload-elements block grid-block">
+                <div class="files-grid">
+                        <a class="cell" href="page1.html">
+                            <img src="assets/images/pdf.png" alt="">
+                            <p>a Possible PDF without info</p>
+                            <div class="background">
+                                <span style="font-size: 0.2em;">Key</span>
+                                <span style="font-size: 0.1em;">Word</span>
+                                <span style="font-size: 0.4em;">System</span>/br
+                                <span style="font-size: 0.5em;">Contents</span>
+                                <span style="font-size: 2.0em;">Hinting</span>
+                            </div>
+                        </a>  
+                    <a class="cell" href="#">
+                        <img src="assets/images/github.png" alt="">
+                        <p>a Possible GitHub without info</p>
+                        <div class="background">
+                            <img src="assets/images/featured.png">
                         </div>
-                    </div>
-                </a>
-            </div>
-            <hr>
-            <div class="card-container lecture">
-            <!-- 特定类型的卡片排版容器，文件样式 -->
-                
-                <a href="404.html" target="_blank" class="card lecture">
-                <!-- 卡片，指向 404.html，打开新标签页 -->
-                    <h2 class="card-title lecture">
-                        <img src="assets/images/pdf.png"><br>a<br>possible url as pdf （404）
-                        <!-- 外部引用：重复使用的 PDF 图标 -->
-                    </h2>
-                    <div class="keywords-background">
-                        <div class="keywords">
-                            <span style="font-size: 68px;">Key</span>
-                            <span style="font-size: 80px;">Word</span>
-                            <span style="font-size: 64px;">System</span>/br
-                            <span style="font-size: 50px;">Contents</span>
-                            <span style="font-size: 42px;">Hinting</span>
-                        </div>
-                    </div>
-                </a>
-
-                <div class="card lecture stack" id="cardStack">
-                <!-- stack 样式的卡片集合，选择 stack，通过 cardStack.js 控制 -->
-                <!-- 里面存放相同名字的文件，通过后缀以及小图标来区分 -->
-                    <a href="404.html" target="_blank" class="card lecture subcard">
-                        <h2 class="card-title lecture"><img src="assets/images/featured.png"><br>another<br>possible featured url as pdf in stack （404）</h2>
                     </a>
-                    <a href="https://github.com/kakukuu/Web-Indexing-OS-style-Template" target="_blank" class="card lecture subcard">
-                        <h2 class="card-title lecture"><img src="assets/images/github.png"><br>another<br>possible url as github in stack</h2>
-                    </a>
-                    <a href="https://kakukuu.github.io/Web-Indexing-OS-style-Template-Project-Introduction/" target="_blank" class="card lecture subcard">
-                        <h2 class="card-title lecture"><img src="assets/images/independent-page.png"><br>another<br>possible url as independent page in stack</h2>
-                    </a>
-                    <div class="keywords-background">
-                        <div class="keywords">
-                            <span style="font-size: 68px;">Key</span>
-                            <span style="font-size: 80px;">Word</span>
-                            <span style="font-size: 64px;">System</span>/br
-                            <span style="font-size: 50px;">Contents</span>
-                            <span style="font-size: 42px;">Hinting</span>
-                        </div>
+                    <a class="cell" href="#">Products</a>
+                    <div class="cell stack" id="cardStack">
+                        <a class="cell subcell" href="404.html">
+                            <img src="assets/images/featured.png">
+                            <p>another<br>possible featured url as pdf in stack （404）</p>
+                            <div class="background">
+                                <span style="font-size: 0.2em;">Key</span>
+                                <span style="font-size: 0.1em;">Word</span>
+                                <span style="font-size: 0.4em;">System</span>/br
+                                <span style="font-size: 0.5em;">Contents</span>
+                                <span style="font-size: 2.0em;">Hinting</span>
+                            </div>
+                        </a>  
+                        <a class="cell subcell" href="404.html">
+                            <img src="assets/images/featured.png">
+                            <p>another<br>possible featured url as pdf in stack （404）</p>
+                        </a>  
+                        
                     </div>
                 </div>
-                
-                
-            </div>
+            </section>
         </div>
     </main>
-    
+
+
+
+
 
     <!-- 引入的外部 JavaScript 文件 -->
-    <script src="javascripts/throttle.js"></script>
-    <!-- 外部引用：实现函数节流功能的脚本，位于 javascripts 文件夹中 -->
-    <script src="javascripts/scrollHandler.js"></script>
-    <!-- 外部引用：处理滚动事件的脚本，位于 javascripts 文件夹中 -->
+
     <script src="javascripts/infoToggle.js"></script>
     <!-- 外部引用：控制信息面板展开与关闭的脚本，位于 javascripts 文件夹中 -->
     <script src="javascripts/main.js"></script>
@@ -186,7 +168,5 @@
     <!-- 外部引用：实现卡片堆叠效果的脚本，位于 javascripts 文件夹中 -->
     <script src="javascripts/copySVG.js"></script>
     <!-- 外部引用：实现复制 SVG 代码功能的脚本，位于 javascripts 文件夹中 -->
-    <script src="javascripts/headerImage.js"></script>
-    <!-- 外部引用：控制页眉图片显示的脚本，位于 javascripts 文件夹中 -->
 </body>
 </html>

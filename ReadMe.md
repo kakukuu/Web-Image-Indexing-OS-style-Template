@@ -1,1 +1,1 @@
-需要匹配介绍页来做细节的索引
+完整保留Web-Indexing-OS-style-Template的逻辑个功能，增加视觉效果

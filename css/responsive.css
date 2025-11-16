@@ -2,21 +2,85 @@
 /* 调整响应式样式 */
 
 /* 小屏幕下的样式 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
 
-  .payload-elements.block.grid-block > .grid{
+  .payload-elements.block.grid-block > .themes-grid{
     grid-template-columns:repeat(2,1fr);
-    grid-template-rows:repeat(3,1fr);
   }
-  .payload-elements.block{
-    height:100vw; /* 高度改为90vw */
+  .payload-elements.block.grid-block > .folders-grid{
+    grid-template-columns:repeat(1,1fr);
+  }
+  .payload-elements.block.grid-block > .files-grid,
+  .cell.stack.active{
+    grid-template-columns:repeat(4,1fr);
   }
 
 }
 
+@media screen and (max-width: 24rem) {
+  
+  .header-elements.block {
+    height: 40vw;
+  }
+  .header-elements.block.grid-block > .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+
+  
+  .payload-elements.block.grid-block > .themes-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .payload-elements.block.grid-block > .folders-grid{
+    grid-template-columns:repeat(1,1fr);
+  }
+  .payload-elements.block.grid-block > .files-grid,
+  .cell.stack.active{
+    grid-template-columns:repeat(3,1fr);
+  }
+  
+
+
+
+}
+
 /* 超小屏幕下的样式 */
-@media screen and (max-width: 480px) {
- 
+@media screen and (max-width: 14rem) {
+  
+  .title-module h1.banner {
+    margin-top: 15vw;
+  }
+  .title-module h1.subtitle-1 {
+    margin-top: 3rem;
+  }
+  .header-elements.block-switcher {
+    right: 0;
+    min-width: 0rem;
+    top: 60vw;
+  }
+  .header-elements.block {
+    height: 60vw;
+  }
+  .header-elements.block.grid-block > .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+
+
+   .payload-elements.block.grid-block > .themes-grid{
+    grid-template-columns:repeat(1,1fr);
+  }
+  .payload-elements.block.grid-block > .folders-grid{
+    grid-template-columns:repeat(1,1fr);
+  }
+  .payload-elements.block.grid-block > .files-grid,
+  .cell.stack.active{
+    grid-template-columns:repeat(1,1fr);
+  }
+
+
 }
 
 /* 暗黑模式下的样式 */

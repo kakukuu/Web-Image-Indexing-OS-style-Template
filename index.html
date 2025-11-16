@@ -28,16 +28,14 @@
     <link rel="icon" href="assets/images/icon.svg" type="image/svg+xml">
     <!-- 外部引用：设置浏览器标签的小图标（favicon），图标文件位于项目的 assets/images 文件夹中 -->
 
-    <link rel="stylesheet" href="css/reset.css">
-    <!-- 外部引用：引入清除浏览器默认样式的 CSS 文件，文件位于项目的 css 文件夹中 -->
-
     <link rel="stylesheet" href="css/styles.css">
     <!-- 外部引用：引入自定义网页样式的 CSS 文件，文件位于项目的 css 文件夹中 -->
      
+    <link rel="stylesheet" href="css/header and payload.css">
+    
     <link rel="stylesheet" href="css/responsive.css">
     <!-- 外部引用：引入响应式网页样式的 CSS 文件，文件位于项目的 css 文件夹中 -->
 
-    <link rel="stylesheet" href="css/header and payload.css">
 
 </head>
 
@@ -76,12 +74,16 @@
                     </div>
                 </div>
                 <div class="header-elements block">
-                    <span class="header-elements version-display">Version 1.0.0</span>
-                    <span class="header-elements separator">|</span>
-                    <span class="header-elements license-display">MIT License</span>
+                    <div class="info">
+                        <span class="header-elements version-display">Version 1.0.0</span>
+                        <span class="header-elements separator">|</span>
+                        <span class="header-elements license-display">MIT License</span>
+                    </div>
                 </div>
                 <div class="header-elements block">
-                    <span class="header-elements copyright-display">© <span id="currentYear"></span> Your Name or Project Team</span>
+                    <div class="info">
+                        <span class="header-elements copyright-display">© <span id="currentYear"></span> Your Name or Project Team</span>
+                    </div>
                 </div>
             </div>
     </header>
@@ -105,12 +107,6 @@
     <!-- 引入的 JavaScript 文件 -->
     <script src="javascripts/throttle.js"></script>
     <!-- 外部引用：实现函数节流功能的 JavaScript 文件，位于 javascripts 文件夹中 -->
-    <script src="javascripts/scrollHandler.js"></script>
-    <!-- 外部引用：处理滚动事件的 JavaScript 文件，位于 javascripts 文件夹中 -->
-    <script src="javascripts/infoToggle.js"></script>
-    <!-- 外部引用：控制信息面板展开与关闭的 JavaScript 文件，位于 javascripts 文件夹中 -->
-    <script src="javascripts/main.js"></script>
-    <!-- 外部引用：主逻辑文件，用于控制主要交互功能，位于 javascripts 文件夹中 -->
     <script src="javascripts/commitList.js"></script>
     <!-- 外部引用：动态获取和显示更新列表的 JavaScript 文件，位于 javascripts 文件夹中 -->
     <script src="javascripts/copyCommitList.js"></script>

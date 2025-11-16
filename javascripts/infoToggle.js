@@ -24,17 +24,11 @@ function toggleInfoPanel() {
         if (infoPanel.classList.contains('open')) {
             // 关闭面板
             infoPanel.classList.remove('open');
-            setTimeout(() => {
-                header.classList.remove('expanded');
-            }, 550); // 600ms 延迟
             infoIcon.src = lightIcon.src;
-            headerSignature.classList.remove('open'); // 隐藏签名 (仅对index生效)
         } else {
             // 打开面板
             infoPanel.classList.add('open');
-            header.classList.add('expanded'); // 增加 header 高度（仅对page生效）
             infoIcon.src = darkIcon.src;
-            headerSignature.classList.add('open'); // 显示签名 (仅对index生效)
         }
 
         
